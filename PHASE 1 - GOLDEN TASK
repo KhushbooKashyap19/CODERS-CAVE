@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Fee_Management_2 {
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Here are some options regarding this fee management system project.....");
+        ArrayList<String> students_fn=new ArrayList<>();
+        ArrayList<String> students_ln=new ArrayList<>();
+        ArrayList<Integer> paid_fee=new ArrayList<>();
+        int fee_paid=0;
+        paid_fee.add(0);
+        int total_fees=50000;
+        while(true) {
+            System.out.println("Enter:-\n" +
+                    "1 if you want to add new student \n" +
+                    "2 if you want to display the students fee report\n"+
+                    "3 if you want to pay fees\n"+
+                    "0 if you wan to quit");
+            int a = sc.nextInt();
+            if (a == 1) {
+                System.out.println("Enter student's first name : ");
+                String name = sc.next();
+                students_fn.add(name);
+                System.out.println("Enter student's last name : ");
+                String name2=sc.next();
+                students_ln.add(name2);
+            }
+        else if(a==2)
+        {
+            System.out.println("\nHere are the students details......\n");
+            for(int i=0;i< students_fn.size();i++)
+            {
+                System.out.println("Student Roll no. :- "+(i+1)+"\n"+"Student Name :- "+students_fn.get(i)+" "+students_ln.get(i)+"\n"+"Total Fee :- "+total_fees+"\n"+"Paid Fee :-  "+ paid_fee.get(i)+"\n"+"Fee Balance :- "+(total_fees - paid_fee.get(i))+"\n");
+            }}
+            else if(a==3)
+            {
+                System.out.println("Enter the student's first name whose fee is to be paid :- ");
+                String n=sc.next();
+                for(int i=0;i< students_fn.size();i++)
+                {
+                    if(n.equalsIgnoreCase(students_fn.get(i)))
+                    {
+                        System.out.println("Enter the amount of fees paid :- ");
+                        int fee=sc.nextInt();
+                        fee_paid=paid_fee.get(i)+fee;
+                        paid_fee.set(i,fee_paid);
+                    }
+                    else {
+                        System.out.println("Sorry student name is not there in this record...");
+                        paid_fee.add(0);
+                    }
+                }
+            }
+            else
+            {
+                System.out.println("Thanks for your cooperation!!!");
+                break;
+            }
+        }
+
+
+    }}
