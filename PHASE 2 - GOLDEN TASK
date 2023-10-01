@@ -5,7 +5,7 @@ public class NUMBER_GUESSING_GAME {
         Scanner sc=new Scanner(System.in);
         System.out.println("Welcome to number guessing game...........");
         System.out.println("Please enter your name :- ");
-        String name=sc.next();
+        String name=sc.nextLine();
         System.out.println("Welcome "+name+"\nOkay, now lets start the game !!");
         System.out.println("\nIn this game, You will have to guess a number that ranges between 1 to 100 and you will get 3 chances to guess, if you fail to guess the number in 5 times then you will lose and you will get to play another round of the game if you passed the previous rounds.");
 
