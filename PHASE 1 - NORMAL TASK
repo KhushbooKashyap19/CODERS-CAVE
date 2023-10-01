@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class BMI_CALCULATION {
+        public static void main(String []args)
+        {
+            Scanner sc=new Scanner(System.in);
+            try
+            {
+                System.out.println("Please enter your name :- ");
+                String name=sc.nextLine();
+                System.out.println("Hello "+name+" Welcome to BMI CALCULATOR. Enter your details to know about your BMI(BODY MASS INDEX) \n");
+                System.out.println("Enter the weight in Kg :- ");
+                double w=sc.nextDouble();
+                System.out.println("Enter the height in meter :- ");
+                double h=sc.nextDouble();
+                double bmi=w/(Math.pow(h,2));
+                System.out.println("Your weight => "+w+" Kg");
+                System.out.println("Your height => "+h+" m");
+                System.out.println("Your bmi => "+bmi+" Kg/m2");
+
+            }
+            catch (Exception e)
+            {
+                System.out.print(e);
+            }
+
+        }
+    }
+
